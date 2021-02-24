@@ -5,7 +5,7 @@ import Message from './Message';
 import MessageForm from './MessageForm';
 import db from '../../config';
 
-function ChannelForm() {
+function Channel() {
   const [messages, setMessage] = useState([]);
 
   useEffect(() => {
@@ -34,4 +34,4 @@ function ChannelForm() {
   );
 }
 
-export default ChannelForm;
+export default Channel;

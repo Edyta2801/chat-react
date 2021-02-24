@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Flex, Stack, Box, Text, Link, Divider } from "@chakra-ui/react";
 
 import AuthContext from "../../AuthContext";
-import ChannelForm from "./ChannelForm";
+import Channel from "./Channel";
 
 function ChatPanel() {
   const { setAuthenticated, nickname } = useContext(AuthContext);
@@ -18,7 +18,7 @@ function ChatPanel() {
             <Link onClick={handleLogout}>Log out</Link>
           </Text>
           <Divider />
-          <ChannelForm />
+          <Channel />
         </Box>
       </Stack>
     </Flex>
