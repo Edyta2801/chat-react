@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { ChakraProvider, Box, VStack, Grid, theme } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
-// import { LoginFormPage } from './components/LoginForm';
-// import { ChatPanel } from './components/ChatPanel';
+import { LoginFormPage } from './components/LoginForm';
+import { ChatPanel } from './components/ChatPanel';
 import { Provider as AuthProvider } from './AuthContext';
 
 function App() {
@@ -17,8 +17,7 @@ function App() {
             <AuthProvider
               value={{ authenticated, setAuthenticated, nickname, setNickname }}
             >
-            Chat Panel or Login Panel
-              {/* {authenticated ? <ChatPanel /> : <LoginFormPage />} */}
+              {authenticated ? <ChatPanel /> : <LoginFormPage />}
             </AuthProvider>
           </VStack>
         </Grid>
