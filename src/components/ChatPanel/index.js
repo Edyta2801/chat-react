@@ -1,2 +1,2 @@
 export {default as ChatPanel} from './ChatPanel';
-export {default as Channel} from './Channel';
+export {default as ChannelForm} from './ChannelForm';

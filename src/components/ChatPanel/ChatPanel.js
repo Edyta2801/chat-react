@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Flex, Stack, Box, Text, Link, Divider } from "@chakra-ui/react";
 
 import AuthContext from "../../AuthContext";
-import Channel from "./Channel";
+import Channel from "./ChannelForm";
 
 function ChatPanel() {
   const { setAuthenticated, nickname } = useContext(AuthContext);
