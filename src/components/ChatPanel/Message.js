@@ -3,7 +3,7 @@ import { Box, Text, Divider } from "@chakra-ui/react";
 
 function convertDate(timestamp) {
   const datetime = new Date(timestamp);
-  // return datetime.toLocaleDateString();
+//   return datetime.toLocaleDateString();
   return `${datetime.getHours()}:${datetime.getMinutes()}:${datetime.getSeconds()}`;
 }
 
