@@ -1,22 +1,24 @@
-import React, { useState, useEffect } from "react";
-import { Stack } from "@chakra-ui/react";
+import React, { useState, useEffect } from 'react';
+import { Stack } from '@chakra-ui/react';
 
-import Message from "./Message";
-import MessageForm from "./MessageForm";
-import db from "../../config";
+import Message from './Message';
+import MessageForm from './MessageForm';
+import db from '../../config';
 
 function ChannelForm() {
   const [messages, setMessage] = useState([]);
 
   useEffect(() => {
-    db.ref("/messages").on("value", (snapshot) => {
+    db.ref('/messages').on('value', snapshot => {
       const fbMessages = snapshot.val();
+      console.log(fbMessages);
       const convertedMessages = Object.entries(fbMessages || {}).map(
         ([id, message]) => ({
           ...message,
-          id
+          id,
         })
       );
+      console.log(convertedMessages);
       setMessage(convertedMessages);
       window.scrollTo(0, document.body.scrollHeight);
     });
@@ -24,7 +26,7 @@ function ChannelForm() {
 
   return (
     <Stack spacing={8} py={6}>
-      {messages.map((message) => (
+      {messages.map(message => (
         <Message key={message.id} message={message} />
       ))}
       <MessageForm />
