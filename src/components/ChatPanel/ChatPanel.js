@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
-import { Flex, Stack, Box, Text, Link, Divider } from "@chakra-ui/react";
+import React, { useContext } from 'react';
+import { Flex, Stack, Box, Text, Link, Divider } from '@chakra-ui/react';
 
-import AuthContext from "../../AuthContext";
-import Channel from "./Channel";
+import AuthContext from '../../AuthContext';
+import Channel from './Channel';
+import { ColorModeSwitcher } from '../../ColorModeSwitcher';
 
 function ChatPanel() {
   const { setAuthenticated, nickname } = useContext(AuthContext);
@@ -14,9 +15,10 @@ function ChatPanel() {
         <Box rounded="lg" bg="white" boxShadow="lg" p={4}>
           <Text textAlign="right">
             Hello <strong>{nickname}</strong>
-            {" | "}
+            {' | '}
             <Link onClick={handleLogout}>Log out</Link>
           </Text>
+          <ColorModeSwitcher />
           <Divider />
           <Channel />
         </Box>
