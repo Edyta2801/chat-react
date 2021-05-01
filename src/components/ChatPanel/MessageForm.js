@@ -34,6 +34,8 @@ function MessageForm() {
     <form onSubmit={handleSubmit}>
       <HStack>
         <Input
+        variant="filled" 
+        // placeholder="Filled" 
           type="text"
           name="content"
           value={newMessage}

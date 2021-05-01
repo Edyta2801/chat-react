@@ -9,12 +9,12 @@ function convertDate(timestamp) {
 
 function Message({ message }) {
   return (
-    <Box rounded="lg" bg="white" boxShadow="lg" p={6}>
-      <Text py={2} color="grey">
+    <Box rounded="lg" bg="white" boxShadow="lg" p={4}>
+      <Text py={2} color="grey" fontSize='md'>
         {message.user} {convertDate(message.datetime)}
       </Text>
       <Divider />
-      <Text py={2}>{message.content}</Text>
+      <Text py={2} fontSize='lg'>{message.content}</Text>
     </Box>
   );
 }
