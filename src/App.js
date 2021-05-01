@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import { ChakraProvider, Box, VStack, Grid, theme } from '@chakra-ui/react';
+import { ChakraProvider, Box, VStack, Grid, theme} from '@chakra-ui/react';
 // import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { LoginFormPage } from './components/LoginForm';
 import { ChatPanel } from './components/ChatPanel';
 import { Provider as AuthProvider } from './AuthContext';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
+// import theme from '@chakra-ui/theme';
+// import theme from './theme';
+
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);

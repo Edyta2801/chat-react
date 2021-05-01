@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
-import { Button, Stack, FormControl, FormLabel, Input } from "@chakra-ui/react";
-import AuthContext from "../../AuthContext";
+import React, { useContext } from 'react';
+import { Button, Stack, FormControl, FormLabel, Input } from '@chakra-ui/react';
+import AuthContext from '../../AuthContext';
 
 function LoginForm() {
   const { setAuthenticated, setNickname } = useContext(AuthContext);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault();
 
     const { nickname } = event.target.elements;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Text, Divider } from "@chakra-ui/react";
+import { Box, Text, Divider, useColorMode } from "@chakra-ui/react";
 
 function convertDate(timestamp) {
   const datetime = new Date(timestamp);
@@ -8,13 +8,30 @@ function convertDate(timestamp) {
 }
 
 function Message({ message }) {
+  const { colorMode } = useColorMode();
+  // const bgColor = { light: 'gray.200', dark: 'gray.700' };
+  const formColor = { light: 'white', dark: 'gray.300' };
+
   return (
-    <Box rounded="lg" bg="white" boxShadow="lg" p={4}>
-      <Text py={2} color="grey" fontSize='md'>
+    <Box rounded="lg" 
+    bg="white"
+    bg={formColor[colorMode]}
+    
+    
+     boxShadow="lg" p={4}>
+      <Text py={2}
+      color="grey" 
+      fontWeight='bold'
+      // bg={bgColor[colorMode]}
+      
+      fontSize='sm'>
         {message.user} {convertDate(message.datetime)}
       </Text>
       <Divider />
-      <Text py={2} fontSize='lg'>{message.content}</Text>
+      <Text 
+
+      color="black" 
+      py={2} fontSize='lg'>{message.content}</Text>
     </Box>
   );
 }

@@ -20,9 +20,9 @@ const styles = {
         body: "Raleway",
       },
     },
-    // a: {
-    //   color: props.colorMode === 'dark' ? 'white' : 'dark',
-    // },
+    'a, input, label': {
+      color: props.colorMode === 'dark' ? 'white' : 'dark',
+    },
 
     //  svg: {
     //   fill: props.colorMode === 'dark' ? 'white' : 'teal.500',
