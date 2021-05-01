@@ -24,7 +24,7 @@ function MessageForm() {
         .push(messageObj)
         .then(() => {
           setNewMessage("");
-          window.scrollTo(0, document.body.scrollHeight);
+          // window.scrollTo(0, document.body.scrollHeight);
         })
         .catch((error) => console.error(error));
     }

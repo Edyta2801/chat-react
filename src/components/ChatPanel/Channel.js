@@ -18,18 +18,20 @@ function Channel() {
           id,
         })
       );
+      convertedMessages.reverse()
       console.log(convertedMessages);
       setMessage(convertedMessages);
-      window.scrollTo(0, document.body.scrollHeight);
+      // window.scrollTo(0, document.body.scrollHeight);
     });
   }, []);
 
   return (
     <Stack spacing={8} py={6}>
+     <MessageForm />
       {messages.map(message => (
         <Message key={message.id} message={message} />
       ))}
-      <MessageForm />
+      {/* <MessageForm /> */}
     </Stack>
   );
 }
