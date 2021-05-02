@@ -19,7 +19,7 @@ function ChatPanel() {
   const { colorMode } = useColorMode();
   const bgColor = { light: 'gray.200', dark: 'gray.700' };
   const formColor = { light: 'white', dark: 'gray.500' };
-  const strongColor = { color: '#193b5e' };
+  const strongColor = { color: '#e768a2' };
 
   return (
     <Flex
