@@ -4,8 +4,8 @@
 ## DEMO  [https://chat-c3e05.web.app](https://chat-c3e05.web.app)
 
 ## Screenshots
-![](../images/image_1.png)
-![](../images/image_2.png)
+![](./images/image_1.png)
+![](./images/image_2.png)
 
 ## Technologies
 * React js
