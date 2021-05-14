@@ -3,20 +3,28 @@ import { HStack, Input, Button, useColorMode } from '@chakra-ui/react';
 
 import AuthContext from '../../AuthContext';
 import db from '../../config';
+const messageAudio = new Audio('./sounds/message.mp3');
 
 function MessageForm() {
   const { nickname } = useContext(AuthContext);
   const [newMessage, setNewMessage] = useState('');
+  const [messageSound, setMessageSound] = useState('');
 
   const handleContentChange = event => {
     setNewMessage(event.target.value);
+    setMessageSound(true);
   };
+  // const handleSoundButton = () => {
+  //   setMessageSound(prev => prev = !prev)
+  // };
 
   const handleSubmit = event => {
     event.preventDefault();
     const messageObj = {
       user: nickname,
       content: newMessage,
+      soundPlay: messageAudio.play(),
+      sound: messageSound,
       datetime: Date.now(),
     };
     if (newMessage) {
@@ -24,6 +32,7 @@ function MessageForm() {
         .push(messageObj)
         .then(() => {
           setNewMessage('');
+          setMessageSound('');
           // window.scrollTo(0, document.body.scrollHeight);
         })
         .catch(error => console.error(error));
@@ -32,18 +41,17 @@ function MessageForm() {
 
   const { colorMode } = useColorMode();
   const bgColor = { light: 'gray.200', dark: 'gray.600' };
-  // const formColor = { light: 'white', dark: 'gray.500' };
 
   return (
     <form onSubmit={handleSubmit}>
       <HStack>
         <Input
-          // variant="filled"
           placeholder="Filled"
           type="text"
           name="content"
           value={newMessage}
           onChange={handleContentChange}
+          // messageSound={handleSoundButton}
           bg={bgColor[colorMode]}
         />
         <Button type="submit" colorScheme="blue">

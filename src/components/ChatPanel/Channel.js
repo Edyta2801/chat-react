@@ -5,6 +5,8 @@ import Message from './Message';
 import MessageForm from './MessageForm';
 import db from '../../config';
 
+// const messageAudio = new Audio('../../../public/sounds/message.mp3');
+
 function Channel() {
   const [messages, setMessage] = useState([]);
 
@@ -18,7 +20,8 @@ function Channel() {
           id,
         })
       );
-      convertedMessages.reverse()
+
+      convertedMessages.reverse();
       console.log(convertedMessages);
       setMessage(convertedMessages);
       // window.scrollTo(0, document.body.scrollHeight);
@@ -27,11 +30,10 @@ function Channel() {
 
   return (
     <Stack spacing={8} py={6}>
-     <MessageForm />
+      <MessageForm />
       {messages.map(message => (
         <Message key={message.id} message={message} />
       ))}
-      {/* <MessageForm /> */}
     </Stack>
   );
 }

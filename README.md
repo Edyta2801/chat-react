@@ -16,7 +16,7 @@
 * Login Form
 * Dark Mode
 * Ability to off new message sound
-* Nickname stored in localStorage
+* Nickname, messages stored in firebase
 
 
 

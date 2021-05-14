@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import {
   Flex,
   Stack,
+  HStack,
   Box,
   Text,
   Link,
@@ -11,9 +12,10 @@ import {
 
 import AuthContext from '../../AuthContext';
 import Channel from './Channel';
+import { SoundBtn } from '../SoundBtn';
 // import { ColorModeSwitcher } from '../../ColorModeSwitcher';
 
-function ChatPanel() {
+function ChatPanel({handleSoundButton, messageSound}) {
   const { setAuthenticated, nickname } = useContext(AuthContext);
   const handleLogout = () => setAuthenticated(false);
   const { colorMode } = useColorMode();
@@ -38,14 +40,24 @@ function ChatPanel() {
           boxShadow="lg"
           p={4}
         >
-          <Text textAlign="right">
-            Hello <strong style={strongColor}>{nickname} </strong>
-            {' | '}
-            <Link onClick={handleLogout}>Log out</Link>
-          </Text>
+          <HStack spacing="3" justifyContent="flex-end">
+            <Text
+            // textAlign="right"
+            >
+              Hello <strong style={strongColor}>{nickname} </strong>
+              {' | '}
+              <Link onClick={handleLogout}>Log out</Link>
+            </Text>
+            <SoundBtn
+              handleSoundButton={handleSoundButton}
+              messageSound={messageSound}
+            />
+          </HStack>
 
           <Divider />
-          <Channel />
+          <Channel
+            messageSound={messageSound}
+          />
         </Box>
       </Stack>
     </Flex>

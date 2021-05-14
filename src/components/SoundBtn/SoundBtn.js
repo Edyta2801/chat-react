@@ -1,40 +1,43 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { IconButton } from '@chakra-ui/react';
 
 import VolumeOn from '../../icons/VolumeOn';
 import VolumeOff from '../../icons/VolumeOff';
 
-function SoundBtn() {
-  const [messageSound, setMessageSound] = useState([]);
-
+function SoundBtn({ handleSoundButton, messageSound }) {
   function volumeIcon() {
-    if (messageSound) {
+    if (!messageSound) {
       return <VolumeOn />;
     }
     return <VolumeOff />;
   }
-  const handleSoundButton = () => {
-    setMessageSound(prev => (prev = !prev));
-  };
-
-  //   const { colorMode } = useColorMode();
-  //   const bgColor = { light: 'gray.200', dark: 'gray.700' };
-  //   const formColor = { light: 'blackAlpha', dark: 'whiteAlpha' };
+  // const handleSoundButton = () => {
+  //   setMessageSound(prev => (prev = !prev));
+  //   console.log('clicked volume')
+  // };
 
   return (
+    //   <button
+    //   className="Messenger__sound-button"
+    //   onClick={handleSoundButton}
+    //   label="Włącz/Wyłącz dźwięk wiadomości"
+    //   title="Włącz lub Wyłącz dźwięk wiadomości"
+    // >
+    //   {volumeIcon()}
+    // </button>
+
     <IconButton
       className="Messenger__sound-button"
-        onClick={handleSoundButton}
+      // onClick={() => handleSoundButton}
+      onClick={handleSoundButton}
       label="Włącz/Wyłącz dźwięk wiadomości"
       title="Włącz lub Wyłącz dźwięk wiadomości"
       size="sm"
       variant="unstyled"
       isRound
-      //   colorScheme={formColor[colorMode]}
-      icon={volumeIcon()}
+      // icon={volumeIcon()}
     >
-      handleSoundButton={handleSoundButton}
-       messageSound={messageSound}
+    <VolumeOn />
       {/* {volumeIcon()} */}
     </IconButton>
   );
